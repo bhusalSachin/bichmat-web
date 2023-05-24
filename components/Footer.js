@@ -2,9 +2,9 @@ import { BsFacebook, BsInstagram, BsTwitter, BsDiscord } from "react-icons/bs";
 
 const Footer = () => {
   return (
-    <div className="w-full h-[15em] bg-green-900 py-4">
-      <div className="container h-full mx-auto flex flex-col space-y-8 text-white relative mt-4">
-        <span className="text-lg">
+    <div className="w-full h-[15em] 2xl:h-[25em] bg-green-900 py-2 px-3 sm:px-0 sm:py-4">
+      <div className="container h-full mx-auto flex flex-col space-y-4 sm:space-y-8 text-white relative mt-4">
+        <span className="text-md sm:text-lg">
           BICHMAT | Revolutionizing The Way You Learn.
         </span>
         <div className="flex space-x-8">

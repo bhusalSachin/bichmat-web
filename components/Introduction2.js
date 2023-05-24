@@ -5,11 +5,11 @@ import Footer from "./Footer";
 
 const Introduction2 = () => {
   return (
-    <div className="w-full h-full flex space-x-12 mx-auto my-auto container items-center relative">
+    <div className="w-full xl:h-full flex flex-col xl:flex-row space-y-8 xl:space-y-0 xl:space-x-12 mx-auto my-auto container items-center relative p-2 xl:p-0">
       {/* left side */}
       {/* includes cool picture */}
-      <div className="w-full">
-        <div className="w-full h-[150%]">
+      <div className="w-3/4 xl:w-full hidden xl:block">
+        <div className="sm:w-full sm:h-[150%]">
           <img
             className="w-full h-full object-cover"
             src="/images/online_test.svg"
@@ -24,17 +24,25 @@ const Introduction2 = () => {
       <div className="flex flex-col space-y-4 font-sans">
         <div className="flex items-center">
           <BsDot size={32} color="red" />
-          <span className="text-xl">Practice Makes Us Perfect</span>
+          <span className="text-md sm:text-lg md:text-xl">
+            Practice Makes Us Perfect
+          </span>
         </div>
 
         {/* Live Classes, Progress Report, Competitive Learning all in one */}
         <div className="flex flex-col space-y-5 font-sans">
-          <span className="text-6xl ">Live Classes</span>
-          <span className="text-7xl text-pink-600 font-bold">
+          <span className="text-4xl sm:text-5xl md:text-6xl ">
+            Live Classes
+          </span>
+          <span className="text-5xl sm:text-6xl md:text-7xl text-pink-600 font-bold">
             Competitive Learning
           </span>
-          <span className="text-6xl">Progress Report </span>
-          <span className="text-pink-600 text-6xl">All in One</span>
+          <span className="text-4xl sm:text-5xl md:text-6xl">
+            Progress Report{" "}
+          </span>
+          <span className="text-pink-600 text-4xl sm:text-5xl md:text-6xl">
+            All in One
+          </span>
 
           <div className="w-1/2">
             <NeonButton>
@@ -46,7 +54,7 @@ const Introduction2 = () => {
           </div>
         </div>
         {/* introductory text */}
-        <div className="p-2 font-sans text-lg">
+        <div className="p-2 font-sans text-md md:text-lg">
           {/* <p>
             At Bichmat, we are committed to revolutionizing the way medical
             aspirants prepare for their entrance exams. Our comprehensive
