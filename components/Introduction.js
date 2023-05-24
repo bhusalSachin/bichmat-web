@@ -52,7 +52,7 @@ const Introduction = () => {
           </div>
           {/* introductory text */}
           <div className="p-2">
-            <p className="font-italic text-lg">
+            <p className="font-italic text-lg font-sans">
               Welcome to Bichmat, where we provide free and paid practice
               questions tailored for medical aspirants in Nepal. Our
               comprehensive collection of practice questions is designed to help
