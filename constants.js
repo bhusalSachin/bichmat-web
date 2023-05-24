@@ -4,7 +4,7 @@ export const DESCRIPTION = "An app for every medical aspirants";
 
 export const PROMO_LANDING = [
   {
-    maintext: "10+",
+    maintext: "10K+",
     text: "Questions",
   },
   {
