@@ -1,5 +1,7 @@
 import Link from "next/link";
 import NeonButton from "./Button";
+import { MdAndroid } from "react-icons/md";
+import { AiFillAndroid } from "react-icons/ai";
 
 const Header = () => {
   return (
@@ -14,7 +16,7 @@ const Header = () => {
           <ul className="flex space-x-24 items-center">
             <li>
               <Link href="/about" className=" text-xl hover:text-red-400">
-                About
+                About Us
               </Link>
             </li>
             <li>
@@ -23,7 +25,12 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <NeonButton>Get App</NeonButton>
+              <NeonButton>
+                <span className="flex">
+                  Get App
+                  <AiFillAndroid size={24} color="white" />
+                </span>
+              </NeonButton>
             </li>
           </ul>
         </nav>
