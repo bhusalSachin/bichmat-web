@@ -1,4 +1,4 @@
-export const TITLE = "BICHMAT | PRACTICE WITH US";
+export const TITLE = "BiChMaT | PRACTICE WITH US";
 
 export const DESCRIPTION = "An app for every medical aspirants";
 
