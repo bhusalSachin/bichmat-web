@@ -3,12 +3,32 @@ import Header from "@/components/Header";
 import Introduction from "@/components/Introduction";
 import Footer from "@/components/Footer";
 import Introduction2 from "@/components/Introduction2";
+import EmailVerifiedText from "@/components/EmailVerified";
+import { useState, useEffect } from "react";
 
-export default function Home() {
+export default function Home(props) {
+  const [verificationText, setVerificationText] = useState(
+    props.verificationText ? props.verificationText : null
+  );
+  const [showVerificationText, setShowVerificationText] = useState(false);
+
+  useEffect(() => {
+    if (verificationText !== null) {
+      setShowVerificationText(true);
+    }
+    const timer = setTimeout(() => {
+      setShowVerificationText(false);
+    }, 15000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <SEO />
       <main className="w-full h-screen mt-0 border-none outline-none rounded-sm relative">
+        {verificationText === null || !showVerificationText ? null : (
+          <EmailVerifiedText>{verificationText}</EmailVerifiedText>
+        )}
         <div className="absolute h-screen xl:h-fit w-full top-0 left-0 -z-10">
           <img
             src="/images/bg-texture.jpeg"
@@ -49,3 +69,24 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async (context) => {
+  const { isVerified, username, first } = context.query;
+  console.log("context.query = ", context.query);
+
+  if (isVerified && (first === "true" || first === true)) {
+    return {
+      props: {
+        verificationText: `Congratulations ${username}! Your email got verified successfully.`,
+      },
+    };
+  }
+  if (isVerified && (first === "false" || first === false)) {
+    return {
+      props: {
+        verificationText: `Dear ${username}, your email was already verified.`,
+      },
+    };
+  }
+  return { props: {} };
+};
