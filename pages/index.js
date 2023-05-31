@@ -72,7 +72,7 @@ export default function Home(props) {
 
 export const getServerSideProps = async (context) => {
   const { isVerified, username, first } = context.query;
-  console.log("context.query = ", context.query);
+  // console.log("context.query = ", context.query);
 
   if (isVerified && (first === "true" || first === true)) {
     return {

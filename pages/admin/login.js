@@ -4,7 +4,7 @@ import axios from "axios";
 import { useRouter } from "next/router";
 
 const Login = (props) => {
-  const [phone, setPhone] = useState("");
+  const [email, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [cookie, setCookie] = useCookies(["token"]);
@@ -16,7 +16,7 @@ const Login = (props) => {
     // console.log("sending req with = ", process.env.LOGIN_ADMIN_URL);
     try {
       const response = await axios.post(process.env.LOGIN_ADMIN_URL, {
-        phone: "+977" + phone,
+        email,
         password,
       });
       // console.log("response.data = ", response.data);
@@ -46,11 +46,11 @@ const Login = (props) => {
           Admin Login
         </h2>
         <div className="mb-4">
-          <label className="block text-gray-700 font-medium mb-2">Phone</label>
+          <label className="block text-gray-700 font-medium mb-2">Email</label>
           <input
             className="border border-gray-400 p-2 rounded-lg w-full"
             type="text"
-            value={phone}
+            value={email}
             onChange={(e) => setPhone(e.target.value)}
           />
         </div>
