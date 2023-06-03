@@ -1,3 +1,4 @@
+import Sidebar from "@/components/Sidebar";
 import axios from "axios";
 import * as cookie from "cookie";
 import { Router } from "next/router";
@@ -5,7 +6,13 @@ import { Router } from "next/router";
 const Admin = (props) => {
   const { isAdmin } = props;
   //   return {isAdmin ? (<div>Admin Page</div>) : (<div>You are not an admin, login please</div>)};
-  return <div>welcome home boy</div>;
+  return (
+    <div className="flex bg-slate-300 min-h-screen">
+      <Sidebar section={"home"} />
+
+      <div className="flex-1">Welcome home boy!</div>
+    </div>
+  );
 };
 
 export const getServerSideProps = async (context) => {

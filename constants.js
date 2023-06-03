@@ -20,3 +20,50 @@ export const PROMO_LANDING = [
     text: "Mentors",
   },
 ];
+
+export const ADMIN_SIDEBAR_MENU = [
+  "Home",
+  "Subject",
+  "Chapters",
+  "Questions",
+  "Users",
+];
+
+export const SUBJECT_LIST = [
+  {
+    name: "Physics",
+    chapters: [
+      { name: "Mechanics" },
+      { name: "Heat and Thermodynamics" },
+      { name: "Optics" },
+      { name: "Modern Physics" },
+    ],
+  },
+  {
+    name: "Physics",
+    chapters: [
+      { name: "Mechanics" },
+      { name: "Heat and Thermodynamics" },
+      { name: "Optics" },
+      { name: "Modern Physics" },
+    ],
+  },
+  {
+    name: "Physics",
+    chapters: [
+      { name: "Mechanics" },
+      { name: "Heat and Thermodynamics" },
+      { name: "Optics" },
+      { name: "Modern Physics" },
+    ],
+  },
+  {
+    name: "Physics",
+    chapters: [
+      { name: "Mechanics" },
+      { name: "Heat and Thermodynamics" },
+      { name: "Optics" },
+      { name: "Modern Physics" },
+    ],
+  },
+];
