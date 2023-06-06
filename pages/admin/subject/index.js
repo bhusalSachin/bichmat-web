@@ -73,31 +73,22 @@ const Subject = (props) => {
             <AddForm
               initForm={{
                 title: "Add Subject",
-                name: "",
-                setShowAddSubject,
-                addSubjectHandler,
+                name: "new subject name here",
+                setShowAddForm: setShowAddSubject,
+                addOnClickHandler: addSubjectHandler,
               }}
             />
           </div>
         )}
 
-        {/* list of available subjects */}
-        {/* <div className="w-full flex flex-col justify-center items-center space-y-6">
-          {SUBJECT_LIST.map((subject, index) => (
-            <AdminCard
-              key={subject.name + index}
-              text={subject.name}
-              internalList={subject.chapters}
-            />
-          ))}
-        </div> */}
         <div className="w-full flex flex-col justify-center items-center space-y-6">
-          {props.isData ? (
+          {props?.isData ? (
             props?.message.map((subject, index) => (
               <AdminCard
                 key={subject.name + index}
                 text={subject.name}
                 internalList={subject.chapters}
+                subId={subject._id}
               />
             ))
           ) : (
@@ -115,16 +106,17 @@ export const getServerSideProps = async (context) => {
     // console.log("allSubRes = ", allSubjsRes.data);
     return {
       props: {
-        isData: allSubjsRes.data.success,
-        message: allSubjsRes.data.message.subjects,
+        isData: allSubjsRes.data.success || null,
+        message: allSubjsRes.data.message.subjects || null,
       },
     };
   } catch (error) {
     console.log(error.message);
     return {
       props: {
-        isData: false,
-        message: error?.message || "Error while retreiving the subjects!",
+        isData: false || null,
+        message:
+          error?.message || "Error while retreiving the subjects!" || null,
       },
     };
   }

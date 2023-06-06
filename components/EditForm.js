@@ -2,19 +2,20 @@ import { useState } from "react";
 import NeonButton from "./Button";
 import { AiFillCloseCircle } from "react-icons/ai";
 
-const AddForm = ({ initForm }) => {
+const EditForm = ({ initForm }) => {
   const [error, setError] = useState(null);
-  const { title, setShowAddForm, addOnClickHandler, ...formData } = initForm;
+  const { title, setShowEditForm, editOnClickHandler, ...formData } = initForm;
   const [newForm, setNewForm] = useState(formData);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    addOnClickHandler(newForm, setError);
+    editOnClickHandler(newForm, setError);
   };
 
   const onCloseHandler = (e) => {
     e.preventDefault();
-    initForm.setShowAddForm(false);
+    initForm.setShowEditForm(false);
     document.body.classList.remove("overflow-hidden");
   };
   return (
@@ -51,7 +52,7 @@ const AddForm = ({ initForm }) => {
                 type="text"
                 value={newForm[key]}
                 onChange={(e) => {
-                  // console.log(newForm);
+                  //   console.log(newForm);
                   setNewForm((prev) => {
                     return { ...prev, [key]: e.target.value };
                   });
@@ -63,10 +64,10 @@ const AddForm = ({ initForm }) => {
       })}
       {error && <p className="text-red-500">{error}</p>}
       <button className="bg-green-600 text-white p-2 rounded-lg hover:bg-green-500">
-        Add
+        {initForm.title}
       </button>
     </form>
   );
 };
 
-export default AddForm;
+export default EditForm;

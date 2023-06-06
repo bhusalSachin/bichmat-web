@@ -9,7 +9,7 @@ const NeonButton = ({
   return (
     <button
       className={`relative inline-block ${
-        !isSmall ? "px-3 py-2" : "p-1"
+        !isSmall ? "px-3 py-2" : "p-1 text-sm"
       } font-semibold transition-all duration-300 ease-in-out ${
         !noColor ? `bg-gradient-to-l` : ""
       } from-green-400 to-pink-400 border-2 border-green-700 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 hover:scale-105 hover:shadow-lg`}
@@ -30,6 +30,8 @@ const NeonButton = ({
             ? "text-blue-600"
             : textColor === "red"
             ? "text-red-600"
+            : textColor === "gray"
+            ? "text-gray-700"
             : ""
         }`}
       >
