@@ -171,6 +171,14 @@ const Chapter = (props) => {
     router.push("/admin/subject");
   };
 
+  const gotoQuestionOfTopic = (e, topicId) => {
+    e.preventDefault();
+
+    router.push(
+      `/admin/subject/chapter/question?subId=${props.subId}&chapId=${props.chapId}&topicId=${topicId}`
+    );
+  };
+
   useEffect(() => {
     if (showAddTopic || showDeleteDialog.state) {
       window.scrollTo({
@@ -289,7 +297,7 @@ const Chapter = (props) => {
                 </div>
                 {openTopic.state && openTopic.index === index && (
                   <div className="border-black flex w-full justify-between my-2">
-                    <div>
+                    <div onClick={(e) => gotoQuestionOfTopic(e, topic._id)}>
                       <NeonButton
                         noColor={true}
                         textColor="blue"
