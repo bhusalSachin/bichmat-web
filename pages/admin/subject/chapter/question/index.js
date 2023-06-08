@@ -1,12 +1,14 @@
+import LatexText from "@/components/LatexText";
 import RichText from "@/components/RichText";
 import axios from "axios";
 
 const QuestionsHome = () => {
   return (
     <div>
-      <span>All the questions@!</span>
-      <div>
+      <h2 className="text-xl text-slate-800 p-2 m-4">Type a New Question</h2>
+      <div className="m-4">
         <RichText />
+        {/* <LatexText /> */}
       </div>
     </div>
   );
