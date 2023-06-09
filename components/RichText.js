@@ -4,8 +4,11 @@ import "react-quill/dist/quill.snow.css";
 import LatexText from "./LatexText";
 import NeonButton from "./Button";
 import ReviewQuestion from "./ReviewQuestion";
+import axios from "axios";
 
 const QuillNoSSRWrapper = dynamic(() => import("react-quill"), { ssr: false });
+
+const MAX_IMAGE_SIZE = 1024 * 1024; // 1MB
 
 const RichText = () => {
   const [question, setQuestion] = useState("");
@@ -21,6 +24,17 @@ const RichText = () => {
     setShowReview((prev) => !prev);
   };
 
+  const submitQuestionhandler = async (e) => {
+    e.preventDefault();
+    try {
+      const imgRes = await axios.post(process.env.QUE_IMG_UPLOAD, {
+        path: question,
+      });
+    } catch (error) {
+      console.log(error?.message || "Error while sending image request.");
+    }
+  };
+
   return (
     <>
       <div className="p-2">
@@ -32,7 +46,7 @@ const RichText = () => {
               toolbar: [
                 [{ header: [1, 2, 3, false] }],
                 ["bold", "italic", "underline"],
-                ["link", "image", "video"],
+                ["link"],
                 ["code-block", "formula"],
                 [{ list: "ordered" }, { list: "bullet" }],
                 ["clean"],
@@ -63,7 +77,7 @@ const RichText = () => {
           modules={{
             toolbar: [["bold", "italic"], ["link", "image"], ["clean"]],
           }}
-          formats={["bold", "italic", "link", "image"]}
+          formats={["bold", "italic", "link"]}
           placeholder="Option 1"
         />
       </div>
@@ -72,7 +86,7 @@ const RichText = () => {
           value={option2}
           onChange={setOption2}
           modules={{
-            toolbar: [["bold", "italic"], ["link", "image"], ["clean"]],
+            toolbar: [["bold", "italic"], ["link"], ["clean"]],
           }}
           formats={["bold", "italic", "link", "image"]}
           placeholder="Option 2"
@@ -83,9 +97,9 @@ const RichText = () => {
           value={option3}
           onChange={setOption3}
           modules={{
-            toolbar: [["bold", "italic"], ["link", "image"], ["clean"]],
+            toolbar: [["bold", "italic"], ["link"], ["clean"]],
           }}
-          formats={["bold", "italic", "link", "image"]}
+          formats={["bold", "italic", "link"]}
           placeholder="Option 3"
         />
       </div>
@@ -94,9 +108,9 @@ const RichText = () => {
           value={option4}
           onChange={setOption4}
           modules={{
-            toolbar: [["bold", "italic"], ["link", "image"], ["clean"]],
+            toolbar: [["bold", "italic"], ["link"], ["clean"]],
           }}
-          formats={["bold", "italic", "link", "image"]}
+          formats={["bold", "italic", "link"]}
           placeholder="Option 4"
         />
       </div>

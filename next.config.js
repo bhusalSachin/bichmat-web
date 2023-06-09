@@ -19,6 +19,8 @@ const nextConfig = {
     DELETE_TOPIC_URL:
       "http://localhost:8000/admin/subject/chapter/topic/delete",
     EDIT_TOPIC_URL: "http://localhost:8000/admin/subject/chapter/topic/update",
+    QUE_IMG_UPLOAD:
+      "http://localhost:8000/admin/subject/chapter/topic/question/upload",
   },
 };
 

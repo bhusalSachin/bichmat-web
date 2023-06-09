@@ -11,6 +11,8 @@ const ReviewQuestion = ({ question }) => {
       <span className="underline underline-offset-2">Question</span>
       {/* <div dangerouslySetInnerHTML={{ __html: question.que }}></div> */}
       <LatexText text={question.que || ""} />
+      {console.log("question review = ", question.que)}
+      {/* <div>{question.que}</div> */}
       <div className="flex flex-col space-y-2">
         <div className="flex space-x-4">
           <span>a.</span>
