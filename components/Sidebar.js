@@ -20,7 +20,8 @@ const Sidebar = ({ section }) => {
 
     // setActive(tabtext);
 
-    const concatUrlString = tabtext === "Home" ? "" : tabtext.toLowerCase();
+    const concatUrlString =
+      tabtext === "Home" ? "" : tabtext.toLowerCase().replace(/\s/g, "");
 
     router.push(`/admin/${concatUrlString}`);
   };
