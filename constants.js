@@ -27,6 +27,7 @@ export const ADMIN_SIDEBAR_MENU = [
   "Chapters",
   "Questions",
   "Users",
+  "Create MCQ Set",
 ];
 
 export const SUBJECT_LIST = [

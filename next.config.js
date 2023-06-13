@@ -21,6 +21,28 @@ const nextConfig = {
     EDIT_TOPIC_URL: "http://localhost:8000/admin/subject/chapter/topic/update",
     QUE_IMG_UPLOAD:
       "http://localhost:8000/admin/subject/chapter/topic/question/upload",
+    ADD_QUE_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/create",
+    GET_QUE_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/getall",
+    EDIT_QUE_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/update",
+    ADD_OPT_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/option/create",
+    DEL_QUE_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/delete",
+    DEL_OPT_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/option/delete",
+    EDIT_OPT_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/option/update",
+    GET_SOL_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/solution/get",
+    ADD_SOL_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/solution/create",
+    EDIT_SOL_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/solution/update",
+    DEL_SOL_URL:
+      "http://localhost:8000/admin/subject/chapter/topic/question/solution/delete",
   },
 };
 

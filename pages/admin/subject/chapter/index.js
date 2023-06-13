@@ -168,14 +168,15 @@ const Chapter = (props) => {
   const goBackToSubject = (e) => {
     e.preventDefault();
 
-    router.push("/admin/subject");
+    // router.push("/admin/subject");
+    router.back();
   };
 
-  const gotoQuestionOfTopic = (e, topicId) => {
+  const gotoQuestionOfTopic = (e, topicId, topicname) => {
     e.preventDefault();
 
     router.push(
-      `/admin/subject/chapter/question?subId=${props.subId}&chapId=${props.chapId}&topicId=${topicId}`
+      `/admin/subject/chapter/question?subId=${props.subId}&chapId=${props.chapId}&topicId=${topicId}&topic=${topicname}`
     );
   };
 
@@ -297,7 +298,11 @@ const Chapter = (props) => {
                 </div>
                 {openTopic.state && openTopic.index === index && (
                   <div className="border-black flex w-full justify-between my-2">
-                    <div onClick={(e) => gotoQuestionOfTopic(e, topic._id)}>
+                    <div
+                      onClick={(e) =>
+                        gotoQuestionOfTopic(e, topic._id, topic.name)
+                      }
+                    >
                       <NeonButton
                         noColor={true}
                         textColor="blue"
