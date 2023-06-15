@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 
 const Sidebar = ({ section }) => {
   const [toggle, setToggle] = useState(true);
-  const [active, setActive] = useState(section);
 
   const router = useRouter();
 

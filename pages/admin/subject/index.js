@@ -1,6 +1,5 @@
 import NeonButton from "@/components/Button";
 import Sidebar from "@/components/Sidebar";
-import { SUBJECT_LIST } from "@/constants";
 import { AiFillPlusCircle } from "react-icons/ai";
 import AdminCard from "@/components/AdminCard";
 import { useEffect, useState } from "react";

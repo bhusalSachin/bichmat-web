@@ -9,6 +9,8 @@ const nextConfig = {
     //   "https://bichmat-server.vercel.app/admin/subject/create",
     CREATE_SUBJECT_URL: "http://localhost:8000/admin/subject/create",
     GET_SUBJECTS_URL: "http://localhost:8000/admin/subject/getall",
+    GET_SUBNAME_URL: "http://localhost:8000/admin/subject/getallsubname",
+    GET_ONE_SUB_URL: "http://localhost:8000/admin/subject/getone",
     EDIT_SUBJECT_URL: "http://localhost:8000/admin/subject/update",
     DELETE_SUBJECT_URL: "http://localhost:8000/admin/subject/delete",
     ADD_CHAPTER_URL: "http://localhost:8000/admin/subject/chapter/create",
@@ -43,6 +45,13 @@ const nextConfig = {
       "http://localhost:8000/admin/subject/chapter/topic/question/solution/update",
     DEL_SOL_URL:
       "http://localhost:8000/admin/subject/chapter/topic/question/solution/delete",
+    CREATE_MCQ_URL: "http://localhost:8000/admin/mcq/create",
+    GET_MCQ_TITLE_URL: "http://localhost:8000/admin/mcq/getallnames",
+    DELETE_MCQ_URL: "http://localhost:8000/admin/mcq/delete",
+    EDIT_MCQ_URL: "http://localhost:8000/admin/mcq/update",
+    GET_ONE_MCQ_URL: "http://localhost:8000/admin/mcq/getone",
+    // GET_TOP_QUE_URL:
+    //   "http://localhost:8000/admin/subject/chapter/topic/question/get",
   },
 };
 

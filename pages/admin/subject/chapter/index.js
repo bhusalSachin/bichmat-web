@@ -118,6 +118,52 @@ const Chapter = (props) => {
     element.addEventListener("keydown", (event) =>
       handleEditableKeyDown(event, topicId)
     );
+    element.addEventListener("blur", (event) =>
+      handleEditableBlur(event, topicId)
+    );
+  };
+
+  const handleEditableBlur = async (e, topicId) => {
+    e.preventDefault();
+
+    const element = e.target;
+    const index = Array.from(topicRef.current).findIndex(
+      (el) => el === element
+    );
+
+    element.contentEditable = false; // Disable editing
+
+    element.removeEventListener("blur", handleEditableBlur);
+    element.removeEventListener("keydown", handleEditableKeyDown);
+
+    try {
+      const editTopicRes = await axios.post(process.env.EDIT_TOPIC_URL, {
+        subId: props.subId,
+        chapId: props.chapId,
+        topicId,
+        newTopic: { name: element.innerText.trim() },
+      });
+      if (editTopicRes.data.success) {
+        // setShowEditSubject(false);
+        window.location.reload();
+        setResMsg({
+          message: editTopicRes.data.message,
+          status: true,
+        });
+      } else {
+        element.innerText = initialValue;
+        setResMsg({
+          message: editTopicRes.data.message,
+          status: false,
+        });
+      }
+    } catch (error) {
+      console.log(error?.message);
+      setResMsg({
+        message: error?.message || "Error while updating topic! Please Retry",
+        status: false,
+      });
+    }
   };
 
   const handleEditableKeyDown = async (e, topicId) => {
@@ -132,6 +178,7 @@ const Chapter = (props) => {
       element.blur();
       element.contentEditable = false; // Disable editing
 
+      element.removeEventListener("blur", handleEditableBlur);
       element.removeEventListener("keydown", handleEditableKeyDown);
 
       try {
