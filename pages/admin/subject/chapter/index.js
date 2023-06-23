@@ -226,6 +226,13 @@ const Chapter = (props) => {
       `/admin/subject/chapter/question?subId=${props.subId}&chapId=${props.chapId}&topicId=${topicId}&topic=${topicname}`
     );
   };
+  const gotoContentOfTopic = (e, topicId, topicname) => {
+    e.preventDefault();
+
+    router.push(
+      `/admin/subject/chapter/content?subId=${props.subId}&chapId=${props.chapId}&topicId=${topicId}&topic=${topicname}`
+    );
+  };
 
   useEffect(() => {
     if (showAddTopic || showDeleteDialog.state) {
@@ -356,6 +363,19 @@ const Chapter = (props) => {
                         isSmall={true}
                       >
                         View all Questions
+                      </NeonButton>
+                    </div>
+                    <div
+                      onClick={(e) =>
+                        gotoContentOfTopic(e, topic._id, topic.name)
+                      }
+                    >
+                      <NeonButton
+                        noColor={true}
+                        textColor="blue"
+                        isSmall={true}
+                      >
+                        View Content
                       </NeonButton>
                     </div>
                     <div onClick={(e) => toggleDialogHandler(e)}>

@@ -10,7 +10,11 @@ const Admin = (props) => {
     <div className="flex bg-slate-300 min-h-screen">
       <Sidebar section={"home"} />
 
-      <div className="flex-1">Welcome home boy!</div>
+      <div className="flex-1">
+        <h1 className="w-full text-center text-rose-700 text-4xl font-bold mt-12">
+          Welcome To Bichmat Admin Panel
+        </h1>
+      </div>
     </div>
   );
 };

@@ -24,7 +24,6 @@ export const PROMO_LANDING = [
 export const ADMIN_SIDEBAR_MENU = [
   "Home",
   "Subject",
-  "Questions",
   "Create MCQ Set",
   "View MCQs",
 ];
